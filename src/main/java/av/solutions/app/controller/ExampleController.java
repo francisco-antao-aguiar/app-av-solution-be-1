@@ -16,4 +16,9 @@ public class ExampleController {
     public List<ExampleEntity> findImages() {
         return exampleService.getAllExamples();
     }
+
+    @GetMapping("hello-world")
+    public String helloWorld() {
+        return "Hello World";
+    }
 }
