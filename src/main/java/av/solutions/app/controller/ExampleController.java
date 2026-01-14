@@ -19,6 +19,6 @@ public class ExampleController {
 
     @GetMapping("hello-world")
     public String helloWorld() {
-        return "Hello World xico gay";
+        return "Hello World";
     }
 }
