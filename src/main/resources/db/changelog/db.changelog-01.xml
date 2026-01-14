@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="001-create-users" author="faguiar">
+        <createTable tableName="users">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="nvarchar2(256)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="name" type="nvarchar2(256)"/>
+            <column name="image_url" type="nvarchar2(512)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="002-create-images" author="faguiar">
+        <createTable tableName="images">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="image_data" type="bytea"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="003-create-portfolio" author="faguiar">
+        <createTable tableName="portfolio">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="nvarchar2(256)"/>
+            <column name="description" type="nvarchar2(512)"/>
+            <column name="description_details" type="nvarchar2(2048)"/>
+            <column name="image_id" type="uuid"/>
+            <column name="created_user" type="uuid"/>
+            <column name="created_at" type="timestamp"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="portfolio"
+                baseColumnNames="image_id"
+                referencedTableName="images"
+                referencedColumnNames="id"
+                constraintName="fk_portfolio_image"/>
+
+        <addForeignKeyConstraint
+                baseTableName="portfolio"
+                baseColumnNames="created_user"
+                referencedTableName="users"
+                referencedColumnNames="id"
+                constraintName="fk_portfolio_user"/>
+    </changeSet>
+
+    <changeSet id="004-create-portfolio-images" author="faguiar">
+        <createTable tableName="portfolio_images">
+            <column name="portfolio_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey
+                tableName="portfolio_images"
+                columnNames="portfolio_id,image_id"
+                constraintName="pk_portfolio_images"/>
+
+        <addForeignKeyConstraint
+                baseTableName="portfolio_images"
+                baseColumnNames="portfolio_id"
+                referencedTableName="portfolio"
+                referencedColumnNames="id"
+                constraintName="fk_portfolio_images_portfolio"/>
+
+        <addForeignKeyConstraint
+                baseTableName="portfolio_images"
+                baseColumnNames="image_id"
+                referencedTableName="images"
+                referencedColumnNames="id"
+                constraintName="fk_portfolio_images_image"/>
+    </changeSet>
+
+</databaseChangeLog>
