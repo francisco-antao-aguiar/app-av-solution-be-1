@@ -1,6 +1,6 @@
 package av.solutions.app.auth.controller;
 
-import av.solutions.app.auth.entity.User;
+import av.solutions.app.auth.entity.UserEntity;
 import av.solutions.app.auth.model.AuthDto;
 import av.solutions.app.auth.model.LoginResponseDto;
 import av.solutions.app.auth.model.RegisterDto;
@@ -31,15 +31,15 @@ public class AuthController {
         this.tokenService = tokenService;
     }
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody AuthDto authDto) {
+    public ResponseEntity<LoginResponseDto> login(@RequestBody AuthDto authDto) {
         UsernamePasswordAuthenticationToken usernamePassword = new UsernamePasswordAuthenticationToken(authDto.username(), authDto.password());
         Authentication auth = this.authenticationManager.authenticate(usernamePassword);
-        String token = tokenService.generateToken((User)auth.getPrincipal());
+        String token = tokenService.generateToken((UserEntity)auth.getPrincipal());
         return ResponseEntity.ok(new LoginResponseDto(token));
     }
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody RegisterDto registerDto) {
+    public ResponseEntity<?> register(@RequestBody RegisterDto registerDto) {
         return authService.registerUser(registerDto);
     }
 }

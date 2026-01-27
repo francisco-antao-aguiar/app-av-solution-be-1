@@ -1,6 +1,6 @@
 package av.solutions.app.auth.service;
 
-import av.solutions.app.auth.entity.User;
+import av.solutions.app.auth.entity.UserEntity;
 import av.solutions.app.auth.model.RegisterDto;
 import av.solutions.app.auth.repository.UserRepository;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +27,7 @@ public class AuthService implements UserDetailsService {
     public ResponseEntity<?> registerUser(RegisterDto registerDto) {
         if(isUsernameIsAvailable(registerDto.username())) {
             String encryptedPassword = new BCryptPasswordEncoder().encode(registerDto.password());
-            User newUser = new User(registerDto.username(), encryptedPassword, registerDto.role());
+            UserEntity newUser = new UserEntity(registerDto.username(), encryptedPassword, registerDto.role());
             this.userRepository.save(newUser);
             return ResponseEntity.ok().build();
         } else {
