@@ -2,11 +2,13 @@ package av.solutions.app.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.util.List;
 import java.util.UUID;
 
-@Table(name = "projects_banner")
+@Table(name = "project")
 @Entity
 @Getter
 @Setter
@@ -20,7 +22,9 @@ public class ProjectEntity {
 
     private String title;
     private String subtitle;
+
     @Lob
+    @JdbcTypeCode(SqlTypes.LONGVARCHAR)
     private String description;
 
     private String location;

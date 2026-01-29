@@ -1,7 +1,39 @@
 package av.solutions.app.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import av.solutions.app.model.ProjectModel;
+import av.solutions.app.model.ProjectPageModel;
+import av.solutions.app.service.ProjectService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.util.UUID;
+
+@RestController()
+@RequestMapping("/project")
+@RequiredArgsConstructor
 public class ProjectController {
+
+    private final ProjectService projectService;
+
+    @GetMapping()
+    public ProjectPageModel getProjects() {
+        return projectService.getPorductPage();
+    }
+
+    @GetMapping("/{id}")
+    public ProjectModel getProjectById(@PathVariable UUID id) {
+        return projectService.getById(id);
+    }
+
+    @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createProject(@RequestBody ProjectModel projectModel) {
+        projectService.addProject(projectModel);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteProject(@PathVariable UUID id) {
+        projectService.deleteProject(id);
+    }
 }

@@ -5,7 +5,7 @@ import lombok.*;
 
 import java.util.UUID;
 
-@Table(name = "projects_banner")
+@Table(name = "project_image")
 @Entity
 @Getter
 @Setter

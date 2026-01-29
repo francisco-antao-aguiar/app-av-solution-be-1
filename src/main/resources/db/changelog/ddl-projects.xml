@@ -57,7 +57,6 @@
             </column>
         </createTable>
 
-        <!-- Existing foreign key to project -->
         <addForeignKeyConstraint
                 baseTableName="project_image"
                 baseColumnNames="project_id"
@@ -66,7 +65,6 @@
                 constraintName="fk_project_image_project"
                 onDelete="CASCADE"/>
 
-        <!-- New foreign key to image data table -->
         <addForeignKeyConstraint
                 baseTableName="project_image"
                 baseColumnNames="project_image_data_id"

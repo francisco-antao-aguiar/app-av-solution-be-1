@@ -5,6 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.util.UUID;
 @Table(name = "image")
@@ -19,5 +21,6 @@ public class ImageEntity {
     private UUID id;
 
     @Lob
+    @JdbcTypeCode(SqlTypes.BINARY)
     private byte[] imageData;
 }

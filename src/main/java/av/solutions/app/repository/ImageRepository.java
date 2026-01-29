@@ -1,4 +1,4 @@
-package av.solutions.app.auth.repository;
+package av.solutions.app.repository;
 
 import av.solutions.app.entity.ImageEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
