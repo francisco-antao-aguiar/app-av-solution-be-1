@@ -28,8 +28,8 @@ public class ProjectController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProject(@RequestBody ProjectModel projectModel) {
-        projectService.addProject(projectModel);
+    public UUID createProject(@RequestBody ProjectModel projectModel) {
+        return projectService.addProject(projectModel);
     }
 
     @DeleteMapping("/delete/{id}")

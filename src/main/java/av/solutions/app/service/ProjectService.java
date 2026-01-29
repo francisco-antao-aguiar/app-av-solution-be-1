@@ -30,9 +30,10 @@ public class ProjectService {
         return ProjectModel.entityToModel(projectEntity);
     }
 
-    public void addProject(ProjectModel projectModel) {
+    public UUID addProject(ProjectModel projectModel) {
         ProjectEntity projectEntity = projectRepository.save(projectModel.modelToEntity());
         projectImageService.addImageToProject(projectEntity.getId(), projectModel.imageIds());
+        return projectEntity.getId();
     }
 
     public void deleteProject(UUID id) {

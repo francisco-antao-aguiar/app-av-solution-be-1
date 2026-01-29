@@ -24,6 +24,8 @@ public class SecurityConfigurations {
             "/auth/register",
             "/hello-world-free",
             "/project/**",
+            "/project/create/**",
+            "/project/delete/**",
             "/images/**"
     };
 

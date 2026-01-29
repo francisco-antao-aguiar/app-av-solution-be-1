@@ -3,6 +3,7 @@ package av.solutions.app.controller;
 import av.solutions.app.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ public class ImageController {
 
     // Upload an image
     @PostMapping()
+    @ResponseStatus(HttpStatus.CREATED)
     public UUID uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
         return imageService.saveImage(file);
     }
