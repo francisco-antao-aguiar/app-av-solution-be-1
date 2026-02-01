@@ -27,7 +27,9 @@ public class SecurityConfigurations {
             "/project/create/**",
             "/project/delete/**",
             "/project/delete/image/**",
-            "/images/**"
+            "/images/**",
+            "/labels/*",
+            "/labels"
     };
 
     private static final String[] ADMIN_ACCESS_ONLY = {
