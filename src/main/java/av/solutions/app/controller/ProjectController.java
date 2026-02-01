@@ -36,4 +36,15 @@ public class ProjectController {
     public void deleteProject(@PathVariable UUID id) {
         projectService.deleteProject(id);
     }
+
+    @PatchMapping("/update/{id}")
+    public void updateProject(@RequestBody ProjectModel projectModel) {
+        projectService.updateProject(projectModel);
+    }
+
+
+    @DeleteMapping("/delete/image/{id}")
+    public void deleteImageProject(@PathVariable UUID id) {
+        projectService.deleteProjectImage(id);
+    }
 }

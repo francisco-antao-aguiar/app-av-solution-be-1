@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -42,7 +41,7 @@ public class ProjectImageService {
         projectImageRepository.saveAll(projectImageEntities);
     }
 
-    public Optional<ProjectImageEntity> getById(UUID id) {
-        return projectImageRepository.findById(id);
+    public void deleteByImageId(UUID id) {
+        projectImageRepository.deleteByImage_Id(id);
     }
 }

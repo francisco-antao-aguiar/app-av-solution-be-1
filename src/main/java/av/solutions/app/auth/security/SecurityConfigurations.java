@@ -26,6 +26,7 @@ public class SecurityConfigurations {
             "/project/**",
             "/project/create/**",
             "/project/delete/**",
+            "/project/delete/image/**",
             "/images/**"
     };
 

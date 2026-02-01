@@ -37,6 +37,18 @@ public class ProjectService {
     }
 
     public void deleteProject(UUID id) {
-        projectRepository.deleteById(id);
+        ProjectEntity projectEntity = projectRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Project not found"));
+
+        projectRepository.delete(projectEntity);
+    }
+
+    public void updateProject(ProjectModel projectModel) {
+        projectRepository.save(projectModel.modelToEntity());
+        projectImageService.addImageToProject(projectModel.id(), projectModel.imageIds());
+    }
+
+    public void deleteProjectImage(UUID imageId) {
+        projectImageService.deleteByImageId(imageId);
     }
 }
