@@ -25,8 +25,7 @@ public class ProjectImageService {
         ProjectEntity projectEntity = projectRepository.findById(projectId)
                 .orElseThrow(() -> new IllegalArgumentException("Project not found"));
         List<ImageEntity> imageEntities = imageIds.stream()
-                .map(imageId -> imageRepository.findById(imageId)
-                        .orElseThrow(() -> new IllegalArgumentException("Image not found")))
+                .map(imageRepository::getReferenceById)
                 .toList();
 
         List<ProjectImageEntity> projectImageEntities = imageEntities.stream()

@@ -25,11 +25,15 @@ public class SecurityConfigurations {
             "/hello-world-free",
             "/project/**",
             "/project/create/**",
+            "/project/update/**",
             "/project/delete/**",
             "/project/delete/image/**",
             "/images/**",
             "/labels/*",
-            "/labels"
+            "/labels",
+            "/client",
+            "/client/create/**",
+            "/client/delete/**"
     };
 
     private static final String[] ADMIN_ACCESS_ONLY = {
