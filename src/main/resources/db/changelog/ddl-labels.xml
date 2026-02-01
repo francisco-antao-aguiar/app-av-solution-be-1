@@ -13,7 +13,7 @@
             <column name="label_id" type="varchar(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="desc" type="varchar(500)"/>
+            <column name="description" type="varchar(500)"/>
         </createTable>
         <addPrimaryKey
                 tableName="labels"

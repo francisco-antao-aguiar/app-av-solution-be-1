@@ -23,4 +23,9 @@ public class LabelsController {
         return labelsService.getLabels();
     }
 
+    @PutMapping()
+    public Map<String, Map<String, String>> putLabels(@RequestBody Map<String, Map<String, String>> labels) {
+        return labelsService.putLabels(labels);
+    }
+
 }

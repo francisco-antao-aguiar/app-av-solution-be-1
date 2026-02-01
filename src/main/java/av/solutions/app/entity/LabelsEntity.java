@@ -16,7 +16,7 @@ public class LabelsEntity {
     private String pageId;
     @Id
     private String labelId;
-    private String desc;
+    private String description;
 }
 
 
