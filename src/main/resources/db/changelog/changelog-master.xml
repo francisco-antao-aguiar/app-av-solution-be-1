@@ -8,4 +8,8 @@
 
     <!-- Schema changes -->
     <include file="ddl-users.xml" relativeToChangelogFile="true"/>
+    <include file="ddl-image.xml" relativeToChangelogFile="true"/>
+    <include file="ddl-projects.xml" relativeToChangelogFile="true"/>
+    <include file="ddl-labels.xml" relativeToChangelogFile="true"/>
+    <include file="ddl-client.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

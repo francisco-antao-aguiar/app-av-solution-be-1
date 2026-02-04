@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+      http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+    <changeSet id="config-labels-1" author="fvilela">
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="telephone1"/>
+            <column name="description" value="+351 261 317 091"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="email1"/>
+            <column name="description" value="geral@grupomirandas.pt"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="label1"/>
+            <column name="description" value="Contactos gerais"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="telephone2"/>
+            <column name="description" value="+351 910 038 919"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="email2"/>
+            <column name="description" value="nuno@grupomirandas.pt"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="label2"/>
+            <column name="description" value="Comercial e compras"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="pessoa2"/>
+            <column name="description" value="Nuno Miranda"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="telephone3"/>
+            <column name="description" value="+351 910 037 324"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="email3"/>
+            <column name="description" value="antonio@grupomirandas.pt"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="label3"/>
+            <column name="description" value="Produção e logística"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="pessoa3"/>
+            <column name="description" value="António Miranda"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="telephone4"/>
+            <column name="description" value="+351 914 535 472"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="email4"/>
+            <column name="description" value="geral@grupomirandas.pt"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="label4"/>
+            <column name="description" value="Direção Financeira, Administrativa e Recursos Humanos"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="pessoa4"/>
+            <column name="description" value="Pedro Neiva"/>
+        </insert>
+    </changeSet>
+    <changeSet id="config-labels-1-2" author="fvilela">
+        <insert tableName="labels">
+            <column name="page_id" value="homeBanner"/>
+            <column name="label_id" value="image"/>
+            <column name="description" value="assets/home/banner.png"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="homeBanner"/>
+            <column name="label_id" value="title"/>
+            <column name="description" value="Construindo o Futuro com Excelência"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="homeBanner"/>
+            <column name="label_id" value="subtitle"/>
+            <column name="description" value="Engenharia e Construção de Qualidade"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="homeBanner"/>
+            <column name="label_id" value="description"/>
+            <column name="description" value="Grupo Mirandas é referência em projetos de engenharia e construção, oferecendo soluções completas com qualidade e confiança."/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="homeBanner"/>
+            <column name="label_id" value="budgetButtonText"/>
+            <column name="description" value="Visite os nossos Projetos"/>
+        </insert>
+    </changeSet>
+    <changeSet id="config-labels-1-3" author="fvilela">
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="image"/>
+            <column name="description" value="assets/home/about-us.jpg"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="title"/>
+            <column name="description" value="Sobre Nós"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="description"/>
+            <column name="description" value="O Grupo Mirandas é uma empresa de referência no setor da construção em Portugal. Com uma equipa altamente qualificada e comprometida com a qualidade, oferecemos soluções completas de engenharia e construção para projetos residenciais, comerciais e industriais."/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="badgeTitle"/>
+            <column name="description" value="9 +"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="badgeSubtitle"/>
+            <column name="description" value="Anos de Experiência"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="characteristics1"/>
+            <column name="description" value="Qualidade Certificada"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="characteristics2"/>
+            <column name="description" value="Prazos Garantidos"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="characteristics3"/>
+            <column name="description" value="Equipa Especializada"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="aboutUs"/>
+            <column name="label_id" value="characteristics4"/>
+            <column name="description" value="Orçamentos Transparentes"/>
+        </insert>
+    </changeSet>
+    <changeSet id="config-labels-1-4" author="fvilela">
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="title"/>
+            <column name="description" value="Nossos Serviços"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="subtitle"/>
+            <column name="description" value="Soluções completas em engenharia e construção"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card1"/>
+            <column name="description" value="Construção de edifícios residenciais e comerciais com os mais altos padrões de qualidade e segurança."/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card2"/>
+            <column name="description" value="Remodelação e renovação de espaços, adaptando-os às suas necessidades e modernizando instalações."/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card3"/>
+            <column name="description" value="Gestão completa de projetos de construção, desde o planeamento até à entrega final."/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card4"/>
+            <column name="description" value="Consultoria especializada em engenharia e construção para otimizar soluções técnicas e financeiras."/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card1Icon"/>
+            <column name="description" value="fa-building"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card2Icon"/>
+            <column name="description" value="fa-hammer"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card3Icon"/>
+            <column name="description" value="fa-clipboard-list"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card4Icon"/>
+            <column name="description" value="fa-handshake"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card1Title"/>
+            <column name="description" value="Construção Civil"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card2Title"/>
+            <column name="description" value="Remodelações"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card3Title"/>
+            <column name="description" value="Gestão de Projetos"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="services"/>
+            <column name="label_id" value="card4Title"/>
+            <column name="description" value="Consultoria"/>
+        </insert>
+    </changeSet>
+    <changeSet id="config-labels-1-5" author="fvilela">
+        <insert tableName="labels">
+            <column name="page_id" value="projects"/>
+            <column name="label_id" value="title"/>
+            <column name="description" value="Nossos Projetos"/>
+        </insert>
+        <insert tableName="labels">
+            <column name="page_id" value="projects"/>
+            <column name="label_id" value="subtitle"/>
+            <column name="description" value="Conheça alguns dos projetos que realizámos e que demonstram a nossa capacidade de execução."/>
+        </insert>
+    </changeSet>
+    <changeSet id="config-labels-1-6" author="fvilela">
+        <insert tableName="labels">
+            <column name="page_id" value="contacts"/>
+            <column name="label_id" value="subtitle"/>
+            <column name="description" value="Engenharia e Construção de Qualidade"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

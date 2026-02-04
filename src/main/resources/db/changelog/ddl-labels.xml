@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+      http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+    <changeSet id="ddl-labels" author="fvilela">
+        <createTable tableName="labels">
+            <column name="page_id" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="label_id" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(500)"/>
+        </createTable>
+        <addPrimaryKey
+                tableName="labels"
+                columnNames="page_id, label_id"
+                constraintName="pk_page_label"/>
+    </changeSet>
+    <include file="config-labels-1.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

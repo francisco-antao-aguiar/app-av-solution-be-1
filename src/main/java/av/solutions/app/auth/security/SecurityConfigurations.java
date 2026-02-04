@@ -2,7 +2,6 @@ package av.solutions.app.auth.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,12 +21,16 @@ public class SecurityConfigurations {
 
     private static final String[] AUTH_WHITELIST = {
             "/auth/login",
-            "/auth/register",
-            "/hello-world-free"
+            "/project/**",
+            "/images/**",
+            "/labels/*",
+            "/labels",
+            "/client",
     };
 
     private static final String[] ADMIN_ACCESS_ONLY = {
-            "hello-world"
+            "hello-world",
+            "/images"
     };
 
     SecurityConfigurations(SecurityFilter securityFilter) {

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="
+      http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="insert-initial-project-data" author="faguiar">
+
+        <!-- ===================== -->
+        <!-- Insert images -->
+        <!-- ===================== -->
+
+        <insert tableName="image">
+            <column name="id" value="aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1"/>
+            <column name="image_data" value="\\x89504E470D0A1A0A"/>
+        </insert>
+
+        <insert tableName="image">
+            <column name="id" value="aaaaaaa2-aaaa-aaaa-aaaa-aaaaaaaaaaa2"/>
+            <column name="image_data" value="\\xFFD8FFE000104A46"/>
+        </insert>
+
+        <insert tableName="image">
+            <column name="id" value="aaaaaaa3-aaaa-aaaa-aaaa-aaaaaaaaaaa3"/>
+            <column name="image_data" value="\\x474946383961"/>
+        </insert>
+
+        <!-- ===================== -->
+        <!-- Insert banner -->
+        <!-- ===================== -->
+
+        <insert tableName="projects_banner">
+            <column name="id" value="11111111-1111-1111-1111-111111111111"/>
+            <column name="title" value="Our Projects"/>
+            <column name="subtitle" value="Built with care and precision"/>
+        </insert>
+
+        <!-- ===================== -->
+        <!-- Insert projects -->
+        <!-- ===================== -->
+
+        <insert tableName="project">
+            <column name="id" value="22222222-2222-2222-2222-222222222222"/>
+            <column name="title" value="Modern Office Building"/>
+            <column name="subtitle" value="Downtown Business Center"/>
+            <column name="description" value="A state-of-the-art office complex designed for productivity."/>
+            <column name="location" value="Lisbon"/>
+            <column name="year" valueNumeric="2024"/>
+            <column name="total_area" valueNumeric="12000"/>
+            <column name="duration" valueNumeric="18"/>
+            <column name="duration_unit" value="MONTHS"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="id" value="bbbbbbb1-bbbb-bbbb-bbbb-bbbbbbbbbbb1"/>
+            <column name="title" value="Luxury Villa"/>
+            <column name="subtitle" value="Private Residence"/>
+            <column name="description" value="A luxury villa designed with modern architecture and open spaces."/>
+            <column name="location" value="Algarve"/>
+            <column name="year" valueNumeric="2023"/>
+            <column name="total_area" valueNumeric="850"/>
+            <column name="duration" valueNumeric="14"/>
+            <column name="duration_unit" value="MONTHS"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="id" value="bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbb2"/>
+            <column name="title" value="Urban Apartment Complex"/>
+            <column name="subtitle" value="Residential Development"/>
+            <column name="description" value="A multi-building apartment complex in the city center."/>
+            <column name="location" value="Porto"/>
+            <column name="year" valueNumeric="2022"/>
+            <column name="total_area" valueNumeric="6200"/>
+            <column name="duration" valueNumeric="24"/>
+            <column name="duration_unit" value="MONTHS"/>
+        </insert>
+
+        <insert tableName="project">
+            <column name="id" value="bbbbbbb3-bbbb-bbbb-bbbb-bbbbbbbbbbb3"/>
+            <column name="title" value="Corporate Headquarters"/>
+            <column name="subtitle" value="Office Building"/>
+            <column name="description" value="Headquarters building with sustainable construction techniques."/>
+            <column name="location" value="Lisbon"/>
+            <column name="year" valueNumeric="2024"/>
+            <column name="total_area" valueNumeric="15000"/>
+            <column name="duration" valueNumeric="30"/>
+            <column name="duration_unit" value="MONTHS"/>
+        </insert>
+
+        <!-- ===================== -->
+        <!-- Link projects to images -->
+        <!-- ===================== -->
+
+        <insert tableName="project_image">
+            <column name="id" value="ccccccc1-cccc-cccc-cccc-ccccccccccc1"/>
+            <column name="project_id" value="22222222-2222-2222-2222-222222222222"/>
+            <column name="project_image_data_id" value="aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1"/>
+        </insert>
+
+        <insert tableName="project_image">
+            <column name="id" value="ccccccc2-cccc-cccc-cccc-ccccccccccc2"/>
+            <column name="project_id" value="bbbbbbb1-bbbb-bbbb-bbbb-bbbbbbbbbbb1"/>
+            <column name="project_image_data_id" value="aaaaaaa2-aaaa-aaaa-aaaa-aaaaaaaaaaa2"/>
+        </insert>
+
+        <insert tableName="project_image">
+            <column name="id" value="ccccccc3-cccc-cccc-cccc-ccccccccccc3"/>
+            <column name="project_id" value="bbbbbbb2-bbbb-bbbb-bbbb-bbbbbbbbbbb2"/>
+            <column name="project_image_data_id" value="aaaaaaa3-aaaa-aaaa-aaaa-aaaaaaaaaaa3"/>
+        </insert>
+
+    </changeSet>
+    <changeSet id="config-label-projects-1" author="fvilela">
+        <update tableName="projects_banner">
+            <column name="title" value="Nossos Projetos"/>
+            <column name="subtitle" value="subtitle"/>
+            <where>title ='Our Projects'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

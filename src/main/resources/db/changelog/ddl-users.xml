@@ -8,7 +8,7 @@
 
     <changeSet id="ddl-users" author="fvilela">
         <createTable tableName="users">
-            <column name="id" type="VARCHAR(100)">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false" unique="true"/>
             </column>
             <column name="username" type="VARCHAR(100)">
@@ -22,4 +22,5 @@
             </column>
         </createTable>
     </changeSet>
+    <include file="config-users-1.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

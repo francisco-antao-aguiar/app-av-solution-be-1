@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.15.xsd">
+
+    <changeSet id="create-client-table" author="your-name">
+        <createTable tableName="client">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="image_id" type="UUID">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="url" type="VARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="client"
+                baseColumnNames="image_id"
+                referencedTableName="image"
+                referencedColumnNames="id"
+                constraintName="fk_client_image"/>
+    </changeSet>
+
+</databaseChangeLog>
