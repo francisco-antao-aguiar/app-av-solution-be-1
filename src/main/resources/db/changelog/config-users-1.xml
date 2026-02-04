@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+      http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+    <changeSet id="config-users-1" author="fvilela">
+        <insert tableName="users">
+            <column name="id" value="81d5db10-62c0-469c-a175-6c42f0d4d928"/>
+            <column name="username" value="grupomirandas"/>
+            <column name="password" value="$2a$10$i/MVy6v0NqXXM1Wb.CTRtOj/IyWcm4BZIUdXGnXVor8FIr7J0Juau"/>
+            <column name="role" value="0"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

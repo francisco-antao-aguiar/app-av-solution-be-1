@@ -22,4 +22,5 @@
             </column>
         </createTable>
     </changeSet>
+    <include file="config-users-1.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
