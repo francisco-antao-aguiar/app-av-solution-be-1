@@ -112,4 +112,11 @@
         </insert>
 
     </changeSet>
+    <changeSet id="config-label-projects-1" author="fvilela">
+        <update tableName="projects_banner">
+            <column name="title" value="Nossos Projetos"/>
+            <column name="subtitle" value="subtitle"/>
+            <where>title ='Our Projects'</where>
+        </update>
+    </changeSet>
 </databaseChangeLog>
