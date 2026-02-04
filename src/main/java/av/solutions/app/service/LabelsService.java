@@ -3,6 +3,8 @@ package av.solutions.app.service;
 import av.solutions.app.entity.LabelsEntity;
 import av.solutions.app.repository.LabelsRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -14,7 +16,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class LabelsService {
     private final LabelsRepository labelsRepository;
+    private final CacheManager cacheManager;
 
+    @Cacheable(value = "data", key = "#root.methodName")
     public Map<String, Map<String, String>> getLabels() {
         List<LabelsEntity> labels = labelsRepository.findAll();
         Map<String, Map<String, String>> labelStructure = new HashMap<>();
@@ -44,6 +48,7 @@ public class LabelsService {
             labelStructure.computeIfAbsent(label.getPageId(), k -> new HashMap<>())
                     .put(label.getLabelId(), label.getDescription());
         }
+        cacheManager.getCache("data").clear();
         return labelStructure;
 
     }
