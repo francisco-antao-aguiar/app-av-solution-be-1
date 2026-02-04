@@ -21,23 +21,16 @@ public class SecurityConfigurations {
 
     private static final String[] AUTH_WHITELIST = {
             "/auth/login",
-            "/auth/register",
-            "/hello-world-free",
             "/project/**",
-            "/project/create/**",
-            "/project/update/**",
-            "/project/delete/**",
-            "/project/delete/image/**",
             "/images/**",
             "/labels/*",
             "/labels",
             "/client",
-            "/client/create/**",
-            "/client/delete/**"
     };
 
     private static final String[] ADMIN_ACCESS_ONLY = {
-            "hello-world"
+            "hello-world",
+            "/images"
     };
 
     SecurityConfigurations(SecurityFilter securityFilter) {
