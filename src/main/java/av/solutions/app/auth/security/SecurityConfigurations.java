@@ -21,6 +21,7 @@ public class SecurityConfigurations {
 
     private static final String[] AUTH_WHITELIST = {
             "/auth/login",
+            "/project",
             "/project/**",
             "/images/**",
             "/labels/*",
