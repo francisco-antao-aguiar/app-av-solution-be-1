@@ -4,6 +4,7 @@ import av.solutions.app.entity.ImageEntity;
 import av.solutions.app.repository.ImageRepository;
 import lombok.RequiredArgsConstructor;
 import net.coobird.thumbnailator.Thumbnails;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,6 +20,7 @@ import java.util.UUID;
 public class ImageService {
     private final ImageRepository imageRepository;
 
+    @Cacheable(value = "data", key = "#root.methodName + '_' + #id")
     public Optional<ImageEntity> getById(UUID id) {
         return imageRepository.findById(id);
     }
